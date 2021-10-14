@@ -8,9 +8,9 @@ default: program
 $(OBJECTS): $(SOURCES)
 	gcc -c $(SOURCES)
 program: program.c $(OBJECTS)
-	gcc -c program.c $(OBJECTS) -o program
+	gcc  program.c $(OBJECTS) -o program
 clean:
 	-rm -f program.o
 	-rm -f program
-	-rm $(OBJECTS)
+	-rm -f $(OBJECTS)
 

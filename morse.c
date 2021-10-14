@@ -11,12 +11,12 @@ char arr_init( int fd, char * arr ) {
 	char first_char;
 	
 	read( fd, &first_char, 1 );
-	printf( "The length was %d\n", read( fd, arr, 1024 ) );
+	printf( "The length was %ld\n", read( fd, arr, 1024 ) );
 	return first_char;
 
 }
 
-int morse( char c, char * arr, char first_char, void** func(int, int, int)  ) {
+int morse( char c, char * arr, char first_char, void (*func) (int, int, int)  ) {
 	int offset = c - first_char;
 	char code = arr[ offset ];
 
