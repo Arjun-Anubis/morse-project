@@ -11,6 +11,7 @@ int main() {
 	int fd;
 	char c;
 	open_pin( 2 );
+	set_out( 2 );
 	void (*send_pulse)(int, int, int) = &pulse;
 
 	if ( (fd = open( "morse", O_RDONLY ))  > 0 ) {
@@ -27,6 +28,6 @@ int main() {
 
 	}
 	else {
-		printf( "Error opening file" );
+		printf( "Error opening file\n" );
 	}
 }
